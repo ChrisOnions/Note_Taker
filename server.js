@@ -5,6 +5,10 @@ const PORT = 3000
 app.use(express.urlencoded({extend: true}))
 app.use(express.json());
 
+require('./routes/ApiRoutes')(app);
+require('./routes/HtmlRoutes')(app);
+
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} `);
 })

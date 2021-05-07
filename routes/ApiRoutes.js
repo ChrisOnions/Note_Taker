@@ -9,4 +9,7 @@ module.exports = (app) => {
 app.post('api/notes',(req,res) => {
  Data_base_JSON.push(req.body) 
 })
+// require / Add fs 
+// Write file to db.json with unique name
+// require / Import unique name gen
 }

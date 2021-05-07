@@ -1,14 +1,16 @@
 const express = require('express')
+
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 8080;
 //Sets up express to handle data Parsing (Body.)
-app.use(express.urlencoded({extend: true}))
+
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
-require('./routes/ApiRoutes')(app);
+require('./routes/ApiRoutes') (app);
 require('./routes/HtmlRoutes')(app);
 
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} `);
+  console.log(`Server running on port http://localhost:${PORT} `);
 })
